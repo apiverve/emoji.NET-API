@@ -1,21 +1,57 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
+using Newtonsoft.Json;
 
 namespace APIVerve
 {
-    using Newtonsoft.Json;
+public class emojisFound
+{
+    [JsonProperty("emoji")]
+    public string emoji { get; set; }
+
+    [JsonProperty("description")]
+    public string description { get; set; }
+
+    [JsonProperty("category")]
+    public string category { get; set; }
+
+    [JsonProperty("aliases")]
+    public string[] aliases { get; set; }
+
+    [JsonProperty("tags")]
+    public string[] tags { get; set; }
+
+    [JsonProperty("unicode_version")]
+    public string unicodeversion { get; set; }
+
+    [JsonProperty("ios_version")]
+    public string iosversion { get; set; }
+
+    [JsonProperty("codePoint")]
+    public string codePoint { get; set; }
+
+}
+
+public class data
+{
+    [JsonProperty("count")]
+    public int count { get; set; }
+
+    [JsonProperty("emojisFound")]
+    public emojisFound[] emojisFound { get; set; }
+
+}
 
 public class ResponseObj
 {
     [JsonProperty("status")]
-    public string Status { get; set; }
+    public string status { get; set; }
 
     [JsonProperty("error")]
-    public string Error { get; set; }
+    public object error { get; set; }
 
     [JsonProperty("data")]
-    public object Data { get; set; }
+    public data data { get; set; }
 
 }
 
