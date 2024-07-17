@@ -5,7 +5,7 @@ using System.Text;
 namespace APIVerve
 {
     public class emojiQueryOptions {
-public string tag { get; set; }
+public string emoji { get; set; }
 }
 
 }
