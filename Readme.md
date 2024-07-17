@@ -1,4 +1,4 @@
-Emoji API
+Emoji Lookup API
 ============
 
 Emoji is a simple tool for getting emoji data. It returns the emoji name, category, and more.
@@ -7,7 +7,7 @@ Emoji is a simple tool for getting emoji data. It returns the emoji name, catego
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [Emoji API](https://apiverve.com/marketplace/api/emoji)
+This is a .NET Wrapper for the [Emoji Lookup API](https://apiverve.com/marketplace/api/emoji)
 
 ---
 
@@ -15,17 +15,17 @@ This is a .NET Wrapper for the [Emoji API](https://apiverve.com/marketplace/api/
 
 Using the .NET CLI:
 ```
-dotnet add package APIVerve.API.Emoji
+dotnet add package APIVerve.API.EmojiLookup
 ```
 
 Using the Package Manager:
 ```
-nuget install APIVerve.API.Emoji
+nuget install APIVerve.API.EmojiLookup
 ```
 
 Using the Package Manager Console:
 ```
-Install-Package APIVerve.API.Emoji
+Install-Package APIVerve.API.EmojiLookup
 ```
 
 From within Visual Studio:
@@ -33,8 +33,8 @@ From within Visual Studio:
 1. Open the Solution Explorer.
 2. Right-click on a project within your solution.
 3. Click on Manage NuGet Packages...
-4. Click on the Browse tab and search for "APIVerve.API.Emoji".
-5. Click on the APIVerve.API.Emoji package, select the appropriate version in the right-tab and click Install.
+4. Click on the Browse tab and search for "APIVerve.API.EmojiLookup".
+5. Click on the APIVerve.API.EmojiLookup package, select the appropriate version in the right-tab and click Install.
 
 
 ---
@@ -48,17 +48,17 @@ You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ## Usage
 
-The Emoji API documentation is found here: [https://docs.apiverve.com/api/emoji](https://docs.apiverve.com/api/emoji).  
+The Emoji Lookup API documentation is found here: [https://docs.apiverve.com/api/emoji](https://docs.apiverve.com/api/emoji).  
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-Emoji API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Emoji Lookup API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```
 // Create an instance of the API client
-var apiClient = new EmojiAPIClient("[YOUR_API_KEY]", true);
+var apiClient = new EmojiLookupAPIClient("[YOUR_API_KEY]", true);
 ```
 
 ---
@@ -71,7 +71,7 @@ Using the API client, you can perform requests to the API.
 
 ```
 var queryOptions = new emojiQueryOptions {
-  tag = "smile"
+  emoji = "🥳"
 };
 ```
 
@@ -97,19 +97,19 @@ if(response.error != null) {
     "count": 1,
     "emojisFound": [
       {
-        "emoji": "😀",
-        "description": "grinning face",
+        "emoji": "🥳",
+        "description": "partying face",
         "category": "Smileys & Emotion",
         "aliases": [
-          "grinning"
+          "partying_face"
         ],
         "tags": [
-          "smile",
-          "happy"
+          "celebration",
+          "birthday"
         ],
-        "unicode_version": "6.1",
-        "ios_version": "6.0",
-        "codePoint": "1f600"
+        "unicode_version": "11.0",
+        "ios_version": "12.1",
+        "codePoint": "1f973"
       }
     ]
   }
