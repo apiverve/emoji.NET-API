@@ -70,7 +70,7 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```
-var queryOptions = new emojiQueryOptions {
+var queryOptions = new EmojiLookupQueryOptions {
   emoji = "🥳"
 };
 ```
@@ -112,7 +112,8 @@ if(response.error != null) {
         "codePoint": "1f973"
       }
     ]
-  }
+  },
+  "code": 200
 }
 ```
 
