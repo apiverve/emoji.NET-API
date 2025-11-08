@@ -4,58 +4,61 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class emojisFound
-{
-    [JsonProperty("emoji")]
-    public string emoji { get; set; }
+    /// <summary>
+    /// EmojisFound data
+    /// </summary>
+    public class EmojisFound
+    {
+        [JsonProperty("emoji")]
+        public string Emoji { get; set; }
 
-    [JsonProperty("description")]
-    public string description { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
 
-    [JsonProperty("category")]
-    public string category { get; set; }
+        [JsonProperty("category")]
+        public string Category { get; set; }
 
-    [JsonProperty("aliases")]
-    public string[] aliases { get; set; }
+        [JsonProperty("aliases")]
+        public string[] Aliases { get; set; }
 
-    [JsonProperty("tags")]
-    public string[] tags { get; set; }
+        [JsonProperty("tags")]
+        public string[] Tags { get; set; }
 
-    [JsonProperty("unicode_version")]
-    public string unicodeversion { get; set; }
+        [JsonProperty("unicode_version")]
+        public string Unicodeversion { get; set; }
 
-    [JsonProperty("ios_version")]
-    public string iosversion { get; set; }
+        [JsonProperty("ios_version")]
+        public string Iosversion { get; set; }
 
-    [JsonProperty("codePoint")]
-    public string codePoint { get; set; }
+        [JsonProperty("codePoint")]
+        public string CodePoint { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("count")]
+        public int Count { get; set; }
 
-public class data
-{
-    [JsonProperty("count")]
-    public int count { get; set; }
+        [JsonProperty("emojisFound")]
+        public EmojisFound[] EmojisFound { get; set; }
 
-    [JsonProperty("emojisFound")]
-    public emojisFound[] emojisFound { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-}
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
